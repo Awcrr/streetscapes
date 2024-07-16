@@ -1,1 +1,439 @@
-<h1>Coming soon!</h1>
+<!doctype html><meta charset=utf-8>
+<title>Streetscapes</title>
+<link href="https://fonts.cdnfonts.com/css/linux-biolinum" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZERS5BVPS"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8ZERS5BVPS');
+</script>
+
+<style>
+body {
+  font-family: 'Linux Biolinum', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+  text-align: justify;
+  background-color: #fff;
+  min-width: 640px;
+  max-width: 1024px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+code {
+  display: block;
+  white-space: pre;
+  font-size: 80%;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.content {
+  margin: 30px auto;
+}
+.borders .content {
+  padding: 1px 50px 20px;
+  margin: 40px auto;
+  box-shadow: 0px 0px 10px #999;
+  border-radius: 15px;
+  background-color: white;
+}
+.borders h2 {
+  margin-top: 30px;
+}
+
+.teaser {
+  margin-top: 50px;
+}
+
+.parahead {
+  font-weight: bold;
+}
+
+a,
+a:visited {
+    color: #224b8d;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+#authors {
+    text-align: center;
+    margin: 0 auto;
+    border-spacing: 0 0;
+}
+
+#authors a {
+    margin: 0 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: bold;
+  margin: 40px auto 20px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 24px;
+  margin: 0 auto 10px;
+}
+
+p {
+  max-width: 40em;
+  margin: 10px auto;
+}
+
+.pill {
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.center-pills {
+  display: flex;
+  justify-content: center;
+}
+
+.pill[active] {
+  background: #1772d0;
+  color: #fff;
+}
+.pill[pending] {
+  background: #37a2f0;
+}
+
+.thumbnail-img {
+  width: 64px;
+  vertical-align: top;
+}
+
+h4 {
+    text-align: center;
+    font-size: 21px;
+    font-weight: 500;
+    margin: 6px 6px 6px 6px;
+    text-decoration: none;
+}
+.thin { padding: 0 .1em; }
+
+.switcher {
+  margin: 0 auto;
+}
+.switcher.small {
+  max-width: 600px;
+}
+.switcher.mid {
+  max-width: 700px;
+}
+
+.fitwidth, .switcher video {
+  width: 100%;
+  max-width: 1024px;
+}
+.prompt {
+  display: block;
+  font-weight: bold;
+  margin: 5px auto;
+  text-align: center;
+}
+.prompt::before {
+  content: "“…";
+  font-weight: normal;
+  padding: 0 .1em;
+}
+.prompt::after {
+  content: "”";
+  font-weight: normal;
+  padding: 0 .1em;
+}
+video:not(:hover)::-webkit-media-controls {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+<div class="content">
+<h1>Streetscapes: Large-scale Consistent Street View Generation Using&nbsp;Autoregressive Video Diffusion</h1>
+<h3>SIGGRAPH 2024</h3>
+
+<p id="authors" style="text-align: center;">
+<a href="https://boyangdeng.com/">Boyang Deng<sup>2✧</sup></a>
+<a href="https://scholar.google.com/citations?user=IkpNZAoAAAAJ&hl=en">Richard Tucker<sup>1</sup></a>
+<a href="https://zhengqili.github.io/">Zhengqi Li<sup>1</sup></a>
+<a href="https://geometry.stanford.edu/member/guibas/">Leonidas Guibas<sup>1,2</sup></a><br>
+<!-- <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely<sup>1<span style="vertical-align: sub; font-size: 21px">*</span></sup></a> -->
+<!-- <a href="https:;//stanford.edu/~gordonwz/">Gordon Wetzstein<sup>2<span style="vertical-align: sub; font-size: 21px">*</span></sup></a><br> -->
+<a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely<sup>1✩</sup></a>
+<a href="https:;//stanford.edu/~gordonwz/">Gordon Wetzstein<sup>2✩</span></sup></a><br>
+<sup>1</sup> <strong>Google Research
+</strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<sup>2</sup> <strong>Stanford University</strong><br>
+<!-- <span style="vertical-align: sub; font-size: 21px">*</span> -->
+✩Equal Contributions<br>
+<!-- <span style="vertical-align: sub; font-size: 21px">♯</span> -->
+✧Work done as a student researcher at Google
+<br>
+</p>
+
+<p style="text-align: center; margin-top: 6px">
+<a href="" target="_blank">[Paper (arXiv)]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="paper/streetscapes_highres.pdf" target="_blank">[Paper (HighRes, 70MB)]</a>
+</p>
+
+<!-- <div class=teaser> -->
+<!-- <video class=fitwidth controls> -->
+<!--     <source src="videos/streetscapes_showreel.mp4" type="video/mp4" /> -->
+<!-- </video> -->
+<!-- </div> -->
+
+</div>
+
+<div class="content">
+<h2>Overview</h2>
+<img class=fitwidth src="images/teaser.png" alt="Method Overview.">
+<!-- <p><span class=parahead>Abstract:</span> -->
+<!-- We present a method for generating Streetscapes<span class=thin>—</span>long sequences of views through an on-the-fly synthesized city-scale scene. -->
+<!-- Our generation is conditioned by language input (e.g., city name, weather), as well as an underlying map/layout hosting the desired trajectory. -->
+<!-- Compared to recent models for video generation or 3D view synthesis, our method can scale to much longer-range camera trajectories, spanning several city blocks, while maintaining visual quality and consistency. -->
+<!-- To achieve this goal, we build on recent work on video diffusion, used within an autoregressive framework that can easily scale to long sequences. -->
+<!-- In particular, we introduce a new temporal imputation method that prevents our autoregressive approach from drifting from the distribution of realistic city imagery. -->
+<!-- We train our Streetscapes system on a compelling source of data<span class=thin>—</span>posed imagery from Google Street View, along with contextual map data<span class=thin>—</span>which allows users to generate city views conditioned on any desired city layout, with controllable camera poses. -->
+<p><span class=parahead>TL;DR:</span>
+We build a system to generate Streetscapes<span class=thin>—</span>long sequences of views through an on-the-fly synthesized city-scale scene, controlled by layout maps and text.
+Our system builds on a few-frame (2 or 4) video diffusion model and uses autoregressive generation at inference to generate hundreds of frames.
+The generated video can be further reconstructed to a NeRF.
+</div>
+
+<div class="content">
+  <h2>Generating Streetscapes</h2>
+  <div class=switcher>
+    <video autoplay loop muted controls>
+        <source src="videos/cruise/299_17170218608934_17170610258796.mp4" type="video/mp4" />
+    </video>
+    <video autoplay loop muted controls hidden></video>
+    <div class="center-pills">
+      <span class="pill" active data-videourl="videos/cruise/299_17170218608934_17170610258796.mp4">
+        <img class="thumbnail-img" src="thumbnails/cruise/299_17170218608934_17170610258796.png" alt="NYC_0">
+      </span>
+      <span class="pill" data-videourl="videos/cruise/360_17169753391248_17170535304872.mp4">
+        <img class="thumbnail-img" src="thumbnails/cruise/360_17169753391248_17170535304872.png" alt="Barcelona_0">
+      </span>
+      <span class="pill" data-videourl="videos/cruise/196_17169452104206_17170470962128.mp4">
+        <img class="thumbnail-img" src="thumbnails/cruise/196_17169452104206_17170470962128.png" alt="London_Night">
+      </span>
+      <span class="pill" data-videourl="videos/cruise/034_17179678456403.mp4">
+        <img class="thumbnail-img" src="thumbnails/cruise/034_17179678456403.png" alt="Paris_Snow">
+      </span>
+      <span class="pill" data-videourl="videos/cruise/079_17170218384643_17170537023646.mp4">
+        <img class="thumbnail-img" src="thumbnails/cruise/079_17170218384643_17170537023646.png" alt="London_0">
+      </span>
+      <span class="pill" data-videourl="videos/cruise/020_17170216159657_17170539039492.mp4">
+        <img class="thumbnail-img" src="thumbnails/cruise/020_17170216159657_17170539039492.png" alt="NYC_1">
+      </span>
+      <span class="pill" data-videourl="videos/cruise/110_17170217514559_17170538057230.mp4">
+        <img class="thumbnail-img" src="thumbnails/cruise/110_17170217514559_17170538057230.png" alt="London_1">
+      </span>
+    </div>
+  </div>
+  <p>Our system generates large-scale realistic street scenes in the form of a video.
+  You can control what scene is generated by picking the layout map and a camera path, as well as an optional text prompt.
+  Key to the control is the rendering of Geometry-Buffers (G-buffers) into the screen space as our conditioning for video generation.
+</div>
+
+<div class="content">
+  <h2>Interpolating Street Views</h2>
+  <p>
+  <div class=switcher>
+    <video autoplay loop muted controls>
+        <source src="videos/interp_real/325_17171118564903_17179870916285.mp4" type="video/mp4" />
+    </video>
+    <video autoplay loop muted controls hidden></video>
+    <div class="center-pills">
+      <span class="pill" active data-videourl="videos/interp_real/325_17171118564903_17179870916285.mp4">
+        <img class="thumbnail-img" src="thumbnails/interp_real/325_17171118564903_17179870916285.png" alt="NYC_0">
+      </span>
+      <span class="pill" data-videourl="videos/interp_real/133_17171118717266_17179876938084.mp4">
+        <img class="thumbnail-img" src="thumbnails/interp_real/133_17171118717266_17179876938084.png" alt="London_0">
+      </span>
+      <span class="pill" data-videourl="videos/interp_real/387_17171120533578_17179873983159.mp4">
+        <img class="thumbnail-img" src="thumbnails/interp_real/387_17171120533578_17179873983159.png" alt="Barcelona_0">
+      </span>
+      <span class="pill" data-videourl="videos/interp_real/056_17171120245428_17179875891967.mp4">
+        <img class="thumbnail-img" src="thumbnails/interp_real/056_17171120245428_17179875891967.png" alt="Paris_1">
+      </span>
+      <span class="pill" data-videourl="videos/interp_real/162_17171120925506_17179871911394.mp4">
+        <img class="thumbnail-img" src="thumbnails/interp_real/162_17171120925506_17179871911394.png" alt="Barcelona_1">
+      </span>
+      <span class="pill" data-videourl="videos/interp_real/318_17171117214386_17179872900128.mp4">
+        <img class="thumbnail-img" src="thumbnails/interp_real/318_17171117214386_17179872900128.png" alt="London_1">
+      </span>
+      <span class="pill" data-videourl="videos/interp_real/390_17171119837869_17179870891620.mp4">
+        <img class="thumbnail-img" src="thumbnails/interp_real/390_17171119837869_17179870891620.png" alt="Paris_0">
+      </span>
+      <span class="pill" data-videourl="videos/interp_real/392_17171117582602_17179877803611.mp4">
+        <img class="thumbnail-img" src="thumbnails/interp_real/392_17171117582602_17179877803611.png" alt="NYC_1">
+      </span>
+    </div>
+  </div>
+  <p>We can also use Streetscapes to interpolate low frame-rate real-world street view captures into a nice and steady ride along your favourite streets.
+</div>
+
+
+<div class="content">
+  <h2>Style and Text Prompt</h2>
+  <h3>Weather and Time of Day</h3>
+  <div class="switcher small">
+    <video autoplay loop muted controls>
+      <source src="videos/weather_tod/dusk_dawn/196_17169450983362_17170472006648_short.mp4" type="video/mp4" />
+    </video>
+    <video autoplay loop muted controls hidden></video>
+    <span class=prompt>in the evening</span>
+    <div class="center-pills">
+      <span class="pill" active data-prompt="in the evening" data-videourl="videos/weather_tod/dusk_dawn/196_17169450983362_17170472006648_short.mp4">Evening</span>
+      <span class="pill" data-prompt="at sunrise" data-videourl="videos/weather_tod/dusk_dawn/333_17169449332915_17170466134905.mp4">Sunrise</span>
+      <span class="pill" data-prompt="on a rainy day" data-videourl="videos/weather_tod/rain_shine/092_17169480801113_17170453593014.mp4">Rain</span>
+      <span class="pill" data-prompt="on a sunny day" data-videourl="videos/weather_tod/rain_shine/246_17169755555868_17170533341128.mp4">Sun</span>
+      <span class="pill" data-prompt="heavy snow, Barcelona street" data-videourl="videos/snowy_barca/1_track.mp4">Snow</span>
+    </div>
+  </div>
+  <p>The text prompt allows us to control the style of Streetscapes, for example by specifying the time of day or the weather. We can even have heavy snow in Barcelona!
+<br><br>
+  <h3>What Makes <span style="font-size: 24px;">&#129360;</span>Paris<span style="font-size: 24px">&#129360;</span> Look Like <span style="font-size: 24px">&#129391;</span>New York City<span style="font-size: 24px">&#129391;</span>?</h3>
+  <div class=switcher>
+    <video autoplay loop muted controls>
+      <source src="videos/paris_to_nyc/new_york_city.mp4" type="video/mp4" />
+    </video>
+    <video autoplay loop muted controls hidden></video>
+    <div class="center-pills">
+      <span class="pill" active data-videourl="videos/paris_to_nyc/new_york_city.mp4">Paris-to-NYC</span>
+      <span class="pill" data-videourl="videos/paris_to_nyc/london.mp4">Paris-to-London</span>
+      <span class="pill" data-videourl="videos/paris_to_nyc/barcelona.mp4">Paris-to-Barcelona</span>
+    </div>
+  </div>
+  <p>We know <a href="http://graphics.cs.cmu.edu/projects/whatMakesParis">What Makes Paris Look Like Paris</a>.
+  But Streetscapes knows <strong>What Makes Paris Look Like New York City</strong>, or London, or Barcelona.
+  That is, we can take the map of a real Paris neighbourhood but make it look like another city using the text prompt.
+</div>
+
+<div class="content">
+  <h2>Comparison with <a href="https://hubert0527.github.io/infinicity/">InfiniCity</a></h2>
+  <video class=fitwidth autoplay loop muted controls>
+  <source src="videos/comparison/streetscapes.mp4" type="video/mp4" />
+  </video><br/>
+  <video class=fitwidth autoplay loop muted controls>
+  <source src="videos/comparison/infinicity.mp4" type="video/mp4" />
+  </video><br/>
+  <p>Video generated from our Streetscapes system (top) compared with videos from a related work, InfiniCity (bottom).
+  We find our results have notably better photorealistic image quality.
+</div>
+
+<div class="content">
+<h2>Citation</h2>
+<p><code>@inproceedings{deng2024streetscapes,
+  title     = {Streetscapes: Large-scale Consistent Street View Generation
+               Using Autoregressive Video Diffusion},
+  author    = {Deng, Boyang and Tucker, Richard and Li, Zhengqi
+               and Guibas, Leonidas and Snavely, Noah and Wetzstein, Gordon},
+  booktitle = {SIGGRAPH 2024 Conference Papers},
+  year      = {2024}
+}
+</code>
+</div>
+
+<div class="content" id="acknowledgements">
+<p><span class=parahead>Acknowledgements:</span>
+Thanks to Thomas Funkhouser, Kyle Genova, Andrew Liu, Lucy Chai, David Salesin, David Fleet, Jonathon Barron, Qianqian Wang, Shiry Ginosar, Luming Tang, Hansheng Chen, and Guandao Yang for their comments and constructive discussions; to William Freeman and John Quintero for helping review our draft; and to all anonymous reviewers for their helpful suggestions.
+G.W. was in part supported by Google, Samsung, and Stanford HAI.
+B.D. was supported by a Meta PhD Research Fellowship.
+The initial idea of this project was partly inspired by the <a href="https://youtu.be/0S43IwBF0uM?si=CrKO-ui4LX03xRjk">Star Guitar</a> video created by Michel Gondry and The Chemical Brothers.
+<p><span class=parahead>Disclaimers:</span>
+Google Maps Street View images used with permission from Google.
+Results on this page are not real Street View images,
+but instead generated scenes that do not exist.
+The only few real street view images are the "Street Views" column in Interpolating Street Views.
+</div>
+
+<script>
+function switchVideo(pill) {
+  const url = pill.dataset.videourl;
+  let container = pill;
+  while (container && !container.classList.contains('switcher')) {
+    container = container.parentElement;
+  }
+  const current = container.querySelector('.switcher video:not([hidden])');
+  const hidden = container.querySelector('.switcher video[hidden]');
+  hidden.src = url;
+  hidden.associatedPill = pill;
+  if (pill.dataset.prompt) {
+    hidden.associatedPrompt = pill.dataset.prompt;
+  }
+}
+
+// Video switching handlers.
+
+for (const v of document.querySelectorAll('.switcher video')) {
+  v.addEventListener('loadedmetadata', (e) => {
+    if (!v.hidden || !v.src) {
+      return;
+    }
+    const current = v.parentElement.querySelector('video:not([hidden])');
+    current.src = '';
+    current.hidden = true;
+    if (v.associatedPill) {
+      v.associatedPill.setAttribute('active', '');
+      v.associatedPill.removeAttribute('pending');
+    }
+    if (v.associatedPrompt) {
+      v.parentElement.querySelector('.prompt').textContent = v.associatedPrompt;
+    }
+    v.hidden = false;
+    v.play();
+  });
+}
+
+function clearPills(e) {
+  for (const p of e.querySelectorAll('.pill')) {
+    p.removeAttribute('active');
+    p.removeAttribute('pending');
+  }
+}
+
+document.addEventListener('click', (e) => {
+  const pill = e.target.classList.contains('pill') ? e.target
+    : e.target.parentElement.classList.contains('pill') ? e.target.parentElement : null;
+  if (!pill) {
+    return;
+  }
+  clearPills(pill.parentElement);
+  pill.setAttribute('pending', '');
+  e.preventDefault();
+  e.stopPropagation();
+  switchVideo(pill, pill.dataset.videourl);
+});
+
+
+</script>
+</body>
+
+</html>
